@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Cosa del Futuro</title>
+  <title>Talleres — FabLab</title>
   <style>
     * {
       margin: 0;
@@ -21,232 +21,100 @@
       align-items: center;
       justify-content: center;
       padding: 1.5rem;
-      cursor: pointer;
-      user-select: none;
-      -webkit-user-select: none;
     }
 
     h1 {
       font-size: 2rem;
       font-weight: 700;
-      margin-bottom: 0.25rem;
       color: #fff;
-      text-align: center;
-    }
-
-    .subtitle {
-      font-size: 0.9rem;
-      color: #888;
-      margin-bottom: 2rem;
-      text-align: center;
-    }
-
-    .subtitle a {
-      color: #aaa;
-      text-decoration: underline;
-      text-decoration-color: #555;
-      text-underline-offset: 2px;
-    }
-
-    .subtitle a:hover {
-      color: #ffe000;
-    }
-
-    .card {
-      background: #ffe000;
-      color: #1a1a2e;
-      border-radius: 1rem;
-      padding: 2rem 2.5rem;
-      max-width: 600px;
-      width: 100%;
-      font-size: 1.25rem;
-      line-height: 1.6;
-      font-weight: 500;
-      text-align: left;
-      box-shadow: 0 8px 30px rgba(255, 224, 0, 0.15);
-      transition: transform 0.15s ease;
-    }
-
-    .card:active {
-      transform: scale(0.98);
-    }
-
-    .card .label {
-      font-size: 0.75rem;
-      font-weight: 700;
-      text-transform: uppercase;
-      letter-spacing: 0.1em;
-      color: #1a1a2e99;
-      margin-bottom: 0.75rem;
-    }
-
-    .card .prompt-text span {
-      font-weight: 700;
-      text-decoration: underline;
-      text-decoration-color: #1a1a2e44;
-      text-underline-offset: 3px;
-    }
-
-    .hint {
-      margin-top: 2rem;
-      font-size: 0.8rem;
-      color: #555;
-      text-align: center;
-    }
-
-    .hint kbd {
-      display: inline-block;
-      background: #2a2a4a;
-      color: #888;
-      border: 1px solid #3a3a5a;
-      border-radius: 4px;
-      padding: 0.1em 0.5em;
-      font-family: inherit;
-      font-size: 0.8rem;
-    }
-
-    .section {
-      max-width: 600px;
-      width: 100%;
-      margin-top: 3rem;
-      font-size: 0.9rem;
-      line-height: 1.7;
-      color: #999;
-    }
-
-    .section h2 {
-      font-size: 1rem;
-      color: #ccc;
       margin-bottom: 0.5rem;
     }
 
-    .section p {
-      margin-bottom: 0.75rem;
+    .tagline {
+      color: #888;
+      font-size: 0.95rem;
+      margin-bottom: 3rem;
     }
 
-    .credits {
+    .talleres {
+      width: 100%;
+      max-width: 500px;
+    }
+
+    .taller {
+      display: block;
+      width: 100%;
+      background: #22223a;
+      border: 1px solid #333;
+      border-radius: 0.75rem;
+      padding: 1.5rem;
+      text-decoration: none;
+      color: inherit;
+      transition: border-color 0.15s ease, background 0.15s ease;
+      margin-bottom: 1rem;
+    }
+
+    .taller:hover {
+      border-color: #ffe000;
+      background: #2a2a4a;
+    }
+
+    .taller h2 {
+      font-size: 1.1rem;
+      font-weight: 600;
+      color: #fff;
+      margin-bottom: 0.4rem;
+    }
+
+    .taller p {
+      font-size: 0.85rem;
+      color: #999;
+      line-height: 1.5;
+    }
+
+    .taller .tag {
+      display: inline-block;
+      font-size: 0.7rem;
+      color: #ffe000;
+      background: #ffe00015;
+      border: 1px solid #ffe00033;
+      border-radius: 4px;
+      padding: 0.15em 0.5em;
+      margin-top: 0.75rem;
+    }
+
+    .footer {
       margin-top: 3rem;
       font-size: 0.75rem;
       color: #555;
-      text-align: center;
-      max-width: 500px;
-      line-height: 1.6;
     }
 
-    .credits a {
+    .footer a {
       color: #777;
       text-decoration: underline;
       text-decoration-color: #444;
       text-underline-offset: 2px;
     }
 
-    .credits a:hover {
+    .footer a:hover {
       color: #ffe000;
-    }
-
-    @media (max-width: 480px) {
-      h1 {
-        font-size: 1.5rem;
-      }
-
-      .card {
-        padding: 1.5rem;
-        font-size: 1.1rem;
-        border-radius: 0.75rem;
-      }
     }
   </style>
 </head>
 <body>
 
-  <h1>Cosa del Futuro</h1>
-  <p class="subtitle">Basado en <a href="https://www.researchgate.net/publication/364677670_The_Thing_From_The_Future_Print-and-Play_Edition" target="_blank" rel="noopener">The Thing from the Future</a></p>
+  <h1>Talleres</h1>
+  <p class="tagline">Herramientas para pensar el futuro</p>
 
-  <div class="card" id="card">
-    <div class="label">Tu prompt</div>
-    <div class="prompt-text" id="prompt">Cargando...</div>
+  <div class="talleres">
+    <a href="/the-thing-from-the-future/" class="taller">
+      <h2>Cosa del Futuro</h2>
+      <p>Generador de prompts creativos basado en "The Thing from the Future". Combina tiempo, arcos, terrenos, objetos y emociones para imaginar artefactos de futuros posibles.</p>
+      <span class="tag">Diseño especulativo</span>
+    </a>
   </div>
 
-  <p class="hint">Click en cualquier parte o <kbd>espacio</kbd> para generar otro</p>
-
-  <div class="section">
-    <h2>¿Qué es?</h2>
-    <p>Cosa del Futuro es un generador de prompts creativos basado en el juego de cartas "The Thing from the Future" de Situation Lab.</p>
-    <p>Cada prompt combina cinco dimensiones: un horizonte temporal, un arco narrativo, un terreno temático, un tipo de objeto y una emoción. Úsalo para imaginar artefactos de futuros posibles.</p>
-    <p>Puedes usar los prompts para sesiones de diseño especulativo, talleres de innovación, ejercicios creativos o simplemente para dejar volar la imaginación.</p>
-  </div>
-
-  <div class="credits">
-    <p>"The Thing from the Future" fue creado por <a href="https://situationlab.org/" target="_blank" rel="noopener">Situation Lab</a> (Stuart Candy &amp; Jeff Watson). Traducción y adaptación al español basada en el trabajo de <a href="https://mikkodufva.com" target="_blank" rel="noopener">Mikko Dufva</a>.</p>
-  </div>
-
-  <script>
-    const datos = {
-      tiempo: [],
-      arco: [],
-      terreno: [],
-      objeto: [],
-      emocion: []
-    };
-
-    const columnas = ['tiempo', 'arco', 'terreno', 'objeto', 'emocion'];
-
-    function pick(arr) {
-      return arr[Math.floor(Math.random() * arr.length)];
-    }
-
-    function generarPrompt() {
-      const t = pick(datos.tiempo);
-      const a = pick(datos.arco);
-      const te = pick(datos.terreno);
-      const o = pick(datos.objeto);
-      const e = pick(datos.emocion);
-
-      return `<span>${t}</span>, en un futuro caracterizado por <span>${a}</span>, existe <span>${o}</span> relacionado con <span>${te}</span> que evoca una sensación de <span>${e}</span>.`;
-    }
-
-    function mostrar() {
-      const el = document.getElementById('prompt');
-      el.innerHTML = generarPrompt();
-    }
-
-    async function cargarDatos() {
-      try {
-        const res = await fetch('datos.tsv');
-        const text = await res.text();
-        const lineas = text.trim().split('\n');
-
-        // Saltar header (primera línea)
-        for (let i = 1; i < lineas.length; i++) {
-          const cols = lineas[i].split('\t');
-          for (let j = 0; j < columnas.length; j++) {
-            const val = (cols[j] || '').trim();
-            if (val) {
-              datos[columnas[j]].push(val);
-            }
-          }
-        }
-
-        mostrar();
-      } catch (err) {
-        document.getElementById('prompt').textContent = 'Error al cargar datos. Asegúrate de servir el sitio con un servidor local.';
-        console.error(err);
-      }
-    }
-
-    // Eventos
-    document.body.addEventListener('click', mostrar);
-
-    document.addEventListener('keydown', function(e) {
-      if (e.code === 'Space' || e.key === ' ') {
-        e.preventDefault();
-        mostrar();
-      }
-    });
-
-    // Iniciar
-    cargarDatos();
-  </script>
+  <p class="footer"><a href="https://fablab.blog">fablab.blog</a></p>
 
 </body>
 </html>
