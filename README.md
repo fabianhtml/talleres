@@ -1,6 +1,6 @@
 # Cosa del Futuro
 
-Generador de prompts creativos basado en [The Thing from the Future](http://situationlab.org/project/the-thing-from-the-future/) de Situation Lab.
+Generador de prompts creativos basado en [The Thing from the Future](https://www.researchgate.net/publication/364677670_The_Thing_From_The_Future_Print-and-Play_Edition) de Situation Lab.
 
 ## Demo
 
