@@ -1,0 +1,860 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Futuro en una Caja — Taller 3 Mujeres STEM</title>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/reveal.js@5.1.0/dist/reveal.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/reveal.js@5.1.0/dist/theme/white.css">
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;800;900&display=swap');
+
+    :root {
+      --teal: #2bb8b2;
+      --teal-dark: #1f9a95;
+      --yellow: #e8c84b;
+      --yellow-light: #fdf6d8;
+      --dark: #1a1a2e;
+      --gray: #64748b;
+      --light: #f8fafc;
+      --blue: #2bb8b2;
+      --orange: #e8c84b;
+      --green: #2bb8b2;
+    }
+
+    .reveal {
+      font-family: 'Inter', system-ui, -apple-system, sans-serif;
+      color: var(--dark);
+    }
+
+    .reveal h1, .reveal h2, .reveal h3 {
+      font-family: 'Inter', system-ui, sans-serif;
+      font-weight: 800;
+      text-transform: none;
+      letter-spacing: -0.02em;
+      color: var(--dark);
+    }
+
+    .reveal h1 { font-size: 2.8em; line-height: 1.1; }
+    .reveal h2 { font-size: 2em; line-height: 1.2; }
+    .reveal h3 { font-size: 1.4em; line-height: 1.3; font-weight: 600; color: var(--gray); }
+
+    .reveal p {
+      font-size: 1.15em;
+      line-height: 1.6;
+      font-weight: 400;
+    }
+
+    .reveal .accent { color: var(--teal); }
+    .reveal .accent-yellow { color: var(--yellow); }
+    .reveal .accent-blue { color: var(--blue); }
+    .reveal .accent-orange { color: var(--orange); }
+    .reveal .dim { color: var(--gray); }
+
+    .reveal .big {
+      font-size: 1.8em;
+      font-weight: 700;
+      line-height: 1.3;
+    }
+
+    .reveal .huge {
+      font-size: 2.5em;
+      font-weight: 900;
+      line-height: 1.1;
+    }
+
+    .reveal ul {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+    }
+
+    .reveal ul li {
+      font-size: 1.1em;
+      line-height: 1.6;
+      padding: 0.3em 0;
+      padding-left: 1.5em;
+      position: relative;
+    }
+
+    .reveal ul li::before {
+      content: '';
+      position: absolute;
+      left: 0;
+      top: 0.75em;
+      width: 8px;
+      height: 8px;
+      border-radius: 50%;
+      background: var(--teal);
+    }
+
+    .reveal ol {
+      padding-left: 1.5em;
+    }
+
+    .reveal ol li {
+      font-size: 1.1em;
+      line-height: 1.8;
+      padding: 0.2em 0;
+    }
+
+    .reveal .slide-number {
+      font-family: 'Inter', sans-serif;
+      font-size: 14px;
+      color: var(--gray);
+      background: transparent;
+    }
+
+    /* Portada */
+    .reveal .portada h1 {
+      font-size: 3.5em;
+      color: var(--teal);
+      margin-bottom: 0.1em;
+    }
+
+    .reveal .portada h3 {
+      font-weight: 400;
+      font-size: 1.3em;
+      color: var(--gray);
+    }
+
+    /* Sección divider */
+    .reveal .section-divider {
+      background: var(--dark);
+      color: white;
+    }
+    .reveal .section-divider h2 {
+      color: white;
+      font-size: 2.5em;
+    }
+    .reveal .section-divider h3 {
+      color: rgba(255,255,255,0.6);
+    }
+
+    /* Cards de tarjetas */
+    .card-row {
+      display: flex;
+      gap: 1em;
+      justify-content: center;
+      margin: 1em 0;
+      flex-wrap: wrap;
+    }
+
+    .card {
+      border-radius: 16px;
+      padding: 1.2em 1.5em;
+      text-align: left;
+      flex: 1;
+      min-width: 200px;
+      max-width: 280px;
+    }
+
+    .card-blue {
+      background: #e8f8f7;
+      border: 3px solid var(--teal);
+    }
+    .card-orange {
+      background: var(--yellow-light);
+      border: 3px solid var(--yellow);
+    }
+    .card-green {
+      background: #e8f8f7;
+      border: 3px solid var(--teal-dark);
+    }
+
+    .card .card-label {
+      font-size: 0.7em;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      margin-bottom: 0.5em;
+    }
+    .card-blue .card-label { color: var(--teal); }
+    .card-orange .card-label { color: var(--yellow); }
+    .card-green .card-label { color: var(--teal-dark); }
+
+    .card .card-title {
+      font-size: 1.1em;
+      font-weight: 700;
+      color: var(--dark);
+      line-height: 1.3;
+    }
+
+    /* Demo badge */
+    .demo-badge {
+      display: inline-block;
+      background: var(--teal);
+      color: white;
+      font-size: 0.6em;
+      font-weight: 700;
+      padding: 0.3em 0.8em;
+      border-radius: 100px;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      margin-bottom: 0.5em;
+    }
+
+    /* Timer interactivo */
+    .timer {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5em;
+      background: var(--dark);
+      color: white;
+      font-size: 1.6em;
+      font-weight: 700;
+      padding: 0.4em 1.2em;
+      border-radius: 100px;
+      margin-top: 0.8em;
+      cursor: pointer;
+      user-select: none;
+      transition: background 0.3s;
+      letter-spacing: 0.03em;
+    }
+
+    .timer:hover {
+      background: #2a2a4a;
+    }
+
+    .timer.running {
+      background: var(--teal);
+    }
+
+    .timer.done {
+      background: #ef4444;
+      animation: pulse 1s ease-in-out 3;
+    }
+
+    .timer .timer-icon {
+      font-size: 0.9em;
+    }
+
+    @keyframes pulse {
+      0%, 100% { transform: scale(1); }
+      50% { transform: scale(1.05); }
+    }
+
+    /* Resource list */
+    .resources {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 1.5em;
+      text-align: left;
+      margin-top: 1em;
+    }
+
+    .resources .resource-group h3 {
+      font-size: 0.85em;
+      font-weight: 700;
+      color: var(--teal);
+      margin-bottom: 0.3em;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+    }
+
+    .resources .resource-group p {
+      font-size: 0.8em;
+      line-height: 1.8;
+      margin: 0;
+      color: var(--dark);
+    }
+
+    .resources .resource-group a {
+      color: var(--blue);
+      text-decoration: none;
+      font-weight: 600;
+    }
+
+    /* Canvas visual */
+    .canvas-visual {
+      background: white;
+      border: 3px solid var(--dark);
+      border-radius: 12px;
+      padding: 1.2em;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 0.8em;
+      text-align: left;
+      font-size: 0.75em;
+      max-width: 700px;
+      margin: 0.8em auto;
+    }
+
+    .canvas-field {
+      border: 2px dashed #cbd5e1;
+      border-radius: 8px;
+      padding: 0.8em;
+    }
+
+    .canvas-field .field-label {
+      font-weight: 700;
+      font-size: 0.85em;
+      color: var(--teal);
+      margin-bottom: 0.3em;
+    }
+
+    .canvas-field .field-hint {
+      font-size: 0.8em;
+      color: var(--gray);
+    }
+
+    .canvas-full {
+      grid-column: 1 / -1;
+    }
+
+    /* Superpoderes grid */
+    .superpoderes-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 0.8em;
+      text-align: left;
+      margin-top: 0.8em;
+    }
+
+    .superpoder-item {
+      background: #f8fafc;
+      border-radius: 10px;
+      padding: 0.8em 1em;
+      border-left: 4px solid var(--teal);
+    }
+
+    .superpoder-item strong {
+      font-size: 0.9em;
+      display: block;
+      margin-bottom: 0.2em;
+    }
+
+    .superpoder-item span {
+      font-size: 0.75em;
+      color: var(--gray);
+    }
+
+    /* Speaker notes styling */
+    .reveal aside.notes {
+      font-family: 'Inter', sans-serif;
+    }
+
+    /* Intermedio */
+    .intermedio-slide {
+      background: linear-gradient(135deg, #e8f8f7 0%, #fdf6d8 100%);
+    }
+
+    /* Progress bar */
+    .reveal .progress {
+      color: var(--teal);
+      height: 4px;
+    }
+
+    /* Print / PDF */
+    @media print {
+      .reveal .slide-background {
+        background: white !important;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="reveal">
+    <div class="slides">
+
+      <!-- ============================================ -->
+      <!-- LÁMINA 1: PORTADA -->
+      <!-- ============================================ -->
+      <section class="portada">
+        <h1>Futuro en<br>una Caja</h1>
+        <h3>Taller 3 — Mujeres STEM Los Ríos</h3>
+        <p class="dim" style="font-size:0.9em; margin-top:1.5em;">5 de febrero 2026</p>
+        <aside class="notes">
+          Tener esta lámina proyectada mientras llegan. No cambiar hasta que estés listo para empezar.
+        </aside>
+      </section>
+
+      <!-- ============================================ -->
+      <!-- LÁMINA 2: EL CAMBIO DE MODO -->
+      <!-- ============================================ -->
+      <section>
+        <p class="big">En los talleres 1 y 2 les pedimos que se <span class="accent">enamoraran del problema</span> y dejaran la solución de lado.</p>
+        <p class="huge" style="margin-top:0.8em;">Hoy eso cambia.</p>
+        <aside class="notes">
+          Pausa dramática. Dejar que lo absorban.
+        </aside>
+      </section>
+
+      <!-- ============================================ -->
+      <!-- LÁMINA 3: LA SOLUCIÓN ES LA PROTAGONISTA -->
+      <!-- ============================================ -->
+      <section>
+        <h2>Hoy la <span class="accent">solución</span><br>es la protagonista</h2>
+        <p style="margin-top:1em;">Cada una tiene un problema definido y aterrizado.<br>Ahora vamos a explorar <strong>con qué herramientas podrían resolverlo</strong>.</p>
+        <aside class="notes">
+          Recapitulación breve. Pedir a 2-3 participantes que digan en una frase su problema (10-15 seg cada una). "¿Alguien me recuerda su problema en una frase?"
+        </aside>
+      </section>
+
+      <!-- ============================================ -->
+      <!-- LÁMINA 4: TOUR DE LO POSIBLE -->
+      <!-- ============================================ -->
+      <section>
+        <h2>¿Qué permite la<br>tecnología <span class="accent">hoy</span>?</h2>
+        <p>No es una clase teórica.<br>Les voy a mostrar herramientas <strong>reales</strong> que pueden usar <strong>ya</strong>.</p>
+        <p class="dim" style="font-size:0.9em; margin-top:1em;">4 demos en vivo + 4 tecnologías adicionales</p>
+        <aside class="notes">
+          Transición a las demos. Abrir las pestañas del navegador que ya tienes preparadas.
+        </aside>
+      </section>
+
+      <!-- ============================================ -->
+      <!-- PRESENTACIÓN FACILITADOR -->
+      <!-- ============================================ -->
+      <section>
+        <div style="display:flex; align-items:center; gap:80px; padding:0 60px;">
+          <img src="assets/fabian-acuna-foto-perfil.jpg" alt="Fabián Acuña Hernández" style="width:340px; height:340px; border-radius:50%; object-fit:cover; border:5px solid #2bb8b2; flex:0 0 340px;">
+          <div style="text-align:left; flex:1;">
+            <h2 style="margin:0 0 20px 0; font-size:72px;">Fabián Acuña Hernández</h2>
+            <p style="font-size:36px; line-height:1.9; margin:0; color:#64748b;">Co-fundador de <strong style="color:#1a1a2e;">9punto5</strong> · Tecnología y futuro del trabajo<br>Productos digitales, consultoría en IA y talleres<br>Google, OpenAI, universidades y startups<br>En el sur de Chile desde 2013</p>
+          </div>
+        </div>
+        <aside class="notes">
+          Presentación breve, máximo 1 minuto. La lámina es solo un apoyo visual — tú cuentas lo que quieras de viva voz.
+        </aside>
+      </section>
+
+      <!-- ============================================ -->
+      <!-- DEMO 1 — IA GENERATIVA -->
+      <!-- ============================================ -->
+      <section>
+        <div class="demo-badge">Demo en vivo</div>
+        <h2>IA generativa</h2>
+        <p>Crea texto, imágenes, código y prototipos<br>a partir de instrucciones en lenguaje natural.</p>
+        <p class="dim" style="font-size:0.85em; margin-top:1.5em;">→ Vamos al navegador</p>
+        <aside class="notes">
+          Cambiar al navegador. Abrir Claude o ChatGPT. Copiar el prompt sobre calidad del agua en comunidades rurales de Los Ríos. Mientras carga, explicar que se da contexto + se piden opciones variadas. Leer 2-3 ideas de la respuesta (una simple, una ambiciosa, una inesperada). Remate: "En un rato les voy a pedir que hagan exactamente esto con SU problema."
+        </aside>
+      </section>
+
+      <!-- ============================================ -->
+      <!-- LÁMINA 6: DEMO 2 — IA ANALÍTICA -->
+      <!-- ============================================ -->
+      <section>
+        <div class="demo-badge">Demo en vivo</div>
+        <h2>IA analítica</h2>
+        <p>Detecta patrones, clasifica datos y predice resultados<br>a partir de información existente.</p>
+        <p class="dim" style="font-size:0.85em; margin-top:1.5em;">→ Vamos al navegador</p>
+        <aside class="notes">
+          Cambiar al navegador. Subir el CSV demo-calidad-agua.csv a Claude. Pegar el prompt de análisis. Mientras carga: "Le estoy pidiendo que analice como lo haría una investigadora, pero que me lo explique en un lenguaje que cualquier persona entienda." Destacar: encontró patrones no obvios, lenguaje accesible, cualquiera puede hacerlo con un CSV y una pregunta. Remate: "Si tienen datos de laboratorio, encuestas, registros clínicos, mediciones ambientales... pueden hacer esto mismo."
+        </aside>
+      </section>
+
+      <!-- ============================================ -->
+      <!-- LÁMINA 7: DEMO 3 — APP EN MINUTOS -->
+      <!-- ============================================ -->
+      <section>
+        <div class="demo-badge">Demo en vivo</div>
+        <h2>App / Plataforma web</h2>
+        <p>De una descripción a un prototipo funcional.<br><strong>Sin saber programar.</strong></p>
+        <p class="dim" style="font-size:0.85em; margin-top:1.5em;">→ Vamos al navegador</p>
+        <aside class="notes">
+          Cambiar a v0.dev. Pegar prompt del dashboard de monitoreo de agua. Mientras genera (30-60 seg): "No escribí ni una línea de código. Le describí qué quiero ver y la IA lo está construyendo." Hacer scroll por el prototipo, señalar elementos. Remate: "Imaginen llegar al Taller 4 con algo así para mostrar y testear con usuarios reales."
+        </aside>
+      </section>
+
+      <!-- ============================================ -->
+      <!-- LÁMINA 8: DEMO 4 — AUTOMATIZACIÓN -->
+      <!-- ============================================ -->
+      <section>
+        <div class="demo-badge">Demo en vivo</div>
+        <h2>Automatización / No-code</h2>
+        <p>Conecta servicios y automatiza tareas repetitivas.<br><strong>Cero programación.</strong></p>
+        <p class="dim" style="font-size:0.85em; margin-top:1.5em;">→ Vamos al navegador</p>
+        <aside class="notes">
+          Mostrar Make.com con el escenario pre-armado (Google Form → Sheets → Email). Explicar el flujo señalando cada módulo. Si funciona: ejecutar en vivo desde el celular. Si solo visual: explicar el diagrama. Remate: "¿Hay algún proceso que hoy es manual, repetitivo o que depende de que alguien se acuerde? Eso se puede automatizar."
+        </aside>
+      </section>
+
+      <!-- ============================================ -->
+      <!-- LÁMINA 9: MÁS SUPERPODERES -->
+      <!-- ============================================ -->
+      <section>
+        <h2>Y también existe esto</h2>
+        <div class="superpoderes-grid">
+          <div class="superpoder-item">
+            <strong>IoT / Sensores</strong>
+            <span>Dispositivos que miden el mundo físico en tiempo real</span>
+          </div>
+          <div class="superpoder-item">
+            <strong>Análisis de datos</strong>
+            <span>Transforma datos crudos en visualizaciones y decisiones</span>
+          </div>
+          <div class="superpoder-item">
+            <strong>Biotecnología aplicada</strong>
+            <span>Bioensayos, fermentación, biomateriales</span>
+          </div>
+          <div class="superpoder-item">
+            <strong>Hardware / Dispositivo</strong>
+            <span>Kits portátiles, estaciones de monitoreo, medidores</span>
+          </div>
+        </div>
+        <aside class="notes">
+          Pasar rápido. No hacer demo. "Estas cuatro las van a encontrar en las tarjetas del ejercicio. Si alguna les interesa, la exploramos en el intermedio." Dar 1 ejemplo concreto de cada una en ~15 seg: sensor de agua que manda datos al celular, dashboard de laboratorio, cáscara de nuez a biomaterial, kit para medir nutrientes del suelo.
+        </aside>
+      </section>
+
+      <!-- ============================================ -->
+      <!-- LÁMINA 10: RONDA RELÁMPAGO -->
+      <!-- ============================================ -->
+      <section>
+        <h2>¿Qué se te acaba<br>de ocurrir?</h2>
+        <ol>
+          <li>Abre ChatGPT, Claude o Gemini</li>
+          <li>Escríbele: <strong class="accent">"Dame 5 formas de resolver [tu problema] usando [la tecnología que más te llamó la atención]"</strong></li>
+          <li>Elige <strong>una cosa</strong> que te haga sentido</li>
+          <li>Escríbela en un <strong>post-it</strong></li>
+        </ol>
+        <div class="timer" data-minutes="10" onclick="toggleTimer(this)"><span class="timer-icon">▶</span> <span class="timer-display">10:00</span></div>
+        <aside class="notes">
+          Circular por la sala. Ayudar a quienes no tienen cuenta o no saben qué escribir. Si alguien no tiene acceso, puede hacer el ejercicio en pareja. Los post-its se guardan para el ejercicio central.
+        </aside>
+      </section>
+
+      <!-- ============================================ -->
+      <!-- LÁMINA 11: BUFFER -->
+      <!-- ============================================ -->
+      <section>
+        <h2>¿Alguien quiere compartir<br>lo que le salió?</h2>
+        <p class="dim">Voluntario — 2 o 3 personas</p>
+        <aside class="notes">
+          Solo si sobra tiempo del buffer de 10 min. Si no, pasar directo al intermedio. Es un buen termómetro de cómo les fue con la IA.
+        </aside>
+      </section>
+
+      <!-- ============================================ -->
+      <!-- LÁMINA 12: INTERMEDIO -->
+      <!-- ============================================ -->
+      <section class="intermedio-slide">
+        <h2>Intermedio</h2>
+        <p class="big">20 minutos</p>
+        <p>Volvemos a las 16:10</p>
+        <aside class="notes">
+          Dejar esta lámina proyectada. Buen momento para resolver dudas individuales sobre las herramientas.
+        </aside>
+      </section>
+
+      <!-- ============================================ -->
+      <!-- LÁMINA 13: INTRO EJERCICIO -->
+      <!-- ============================================ -->
+      <section class="section-divider" data-background-color="#1a1a2e">
+        <h2 style="color:white;">Futuro en<br>una Caja</h2>
+        <aside class="notes">
+          Mostrar los tres mazos de tarjetas físicamente (levantarlos en la mano). Explicar que son como un juego de cartas.
+        </aside>
+      </section>
+
+      <!-- ============================================ -->
+      <!-- LÁMINA 14: REGLAS DEL JUEGO -->
+      <!-- ============================================ -->
+      <section>
+        <p class="big">Combina tu problema con <span class="accent">tecnologías al azar</span> y <span class="accent">restricciones del futuro</span>.</p>
+        <p style="margin-top:1em;">El objetivo no es encontrar LA solución,<br>sino generar <strong>VARIAS ideas posibles</strong>.</p>
+        <p class="huge accent" style="margin-top:0.8em;">Cantidad sobre perfección.</p>
+        <aside class="notes">
+          Transición al ejercicio principal. Tono lúdico. Esto es un juego, no una evaluación.
+        </aside>
+      </section>
+
+      <!-- ============================================ -->
+      <!-- LÁMINA 15: LAS TARJETAS -->
+      <!-- ============================================ -->
+      <section>
+        <h2>Cada una va a tomar:</h2>
+        <div class="card-row">
+          <div class="card card-blue">
+            <div class="card-label">2 tarjetas azules</div>
+            <div class="card-title">Superpoder tecnológico</div>
+          </div>
+          <div class="card card-orange">
+            <div class="card-label">1 tarjeta naranja</div>
+            <div class="card-title">Restricción 2030</div>
+          </div>
+          <div class="card card-green">
+            <div class="card-label">1 tarjeta verde</div>
+            <div class="card-title">Perfil extremo</div>
+          </div>
+        </div>
+        <p style="margin-top:1em; font-size:1.1em;">+ <strong>tu problema</strong> (el que traes del Taller 1)</p>
+        <aside class="notes">
+          Poner los mazos boca abajo en las mesas o en una caja central. Que cada participante se levante a tomar sus tarjetas. El efecto "mystery box" es parte del juego.
+        </aside>
+      </section>
+
+      <!-- ============================================ -->
+      <!-- LÁMINA 16: LA CONSIGNA -->
+      <!-- ============================================ -->
+      <section>
+        <h3 style="color:var(--gray);">La consigna</h3>
+        <p class="big" style="margin-top:0.5em;">Usando tu problema + tus superpoderes + tu restricción + tu perfil:</p>
+        <p class="huge accent" style="margin-top:0.5em;">Diseña un producto o servicio del 2030.</p>
+        <p style="margin-top:0.8em;">Genera al menos <strong>3 conceptos diferentes</strong>.</p>
+        <p class="dim" style="font-size:0.9em; margin-top:0.5em;">Puedes usar la IA como compañero de brainstorming.</p>
+        <aside class="notes">
+          Leer la consigna en voz alta. "La IA es un insumo, no la respuesta. Úsala para generar opciones, tú decides cuáles te hacen sentido."
+        </aside>
+      </section>
+
+      <!-- ============================================ -->
+      <!-- LÁMINA 17: EL CANVAS -->
+      <!-- ============================================ -->
+      <section>
+        <h2>El canvas</h2>
+        <p class="dim" style="font-size:0.85em;">Para cada concepto, llena uno</p>
+        <div class="canvas-visual">
+          <div class="canvas-field canvas-full">
+            <div class="field-label">Nombre</div>
+            <div class="field-hint">Puede ser inventado, lúdico, provisional</div>
+          </div>
+          <div class="canvas-field">
+            <div class="field-label">¿Qué hace?</div>
+            <div class="field-hint">1 oración</div>
+          </div>
+          <div class="canvas-field">
+            <div class="field-label">¿Para quién?</div>
+            <div class="field-hint">Perfil de tu tarjeta + tu usuario real</div>
+          </div>
+          <div class="canvas-field">
+            <div class="field-label">¿Qué tecnología usa?</div>
+            <div class="field-hint">De tus tarjetas + las que quieras</div>
+          </div>
+          <div class="canvas-field">
+            <div class="field-label">¿Por qué en 2030 es necesario?</div>
+            <div class="field-hint">Conecta con tu restricción</div>
+          </div>
+          <div class="canvas-field canvas-full" style="min-height:60px;">
+            <div class="field-label">Dibuja o esquematiza tu idea</div>
+          </div>
+        </div>
+        <aside class="notes">
+          Levantar un canvas impreso para que lo vean. Repartir 3 canvas por persona junto con las tarjetas.
+        </aside>
+      </section>
+
+      <!-- ============================================ -->
+      <!-- LÁMINA 18: A TRABAJAR -->
+      <!-- ============================================ -->
+      <section>
+        <h2>A trabajar</h2>
+        <ul>
+          <li>Combina tus tarjetas con tu problema</li>
+          <li>Usa la IA como compañero de brainstorming</li>
+          <li>Genera mínimo <strong>3 conceptos</strong> (uno por canvas)</li>
+        </ul>
+        <p style="margin-top:1em; background:#e8f8f7; padding:0.8em 1.2em; border-radius:10px; font-size:0.95em; display:inline-block;">
+          A los 10 min → intercambia tarjetas con tu vecina
+        </p>
+        <div class="timer" data-minutes="25" onclick="toggleTimer(this)"><span class="timer-icon">▶</span> <span class="timer-display">25:00</span></div>
+        <aside class="notes">
+          Poner timer visible. Circular por la sala. A los 10 minutos decir en voz alta: "Si quieren, intercambien una tarjeta con la persona de al lado para probar nuevas combinaciones." A los 20 min: "Quedan 5 minutos para cerrar sus conceptos."
+        </aside>
+      </section>
+
+      <!-- ============================================ -->
+      <!-- LÁMINA 19: FERTILIZACIÓN CRUZADA -->
+      <!-- ============================================ -->
+      <section>
+        <h2>Fertilización cruzada</h2>
+        <p>Grupos de 4-5 personas.<br>Cada persona comparte <strong>su concepto favorito</strong> (2 min).</p>
+        <p style="margin-top:1em; font-size:1.05em;">El grupo aporta:</p>
+        <ul>
+          <li><em>"¿Y si también...?"</em></li>
+          <li><em>"Esto me recuerda a..."</em></li>
+          <li><em>"¿Has pensado en...?"</em></li>
+        </ul>
+        <div class="timer" data-minutes="20" onclick="toggleTimer(this)"><span class="timer-icon">▶</span> <span class="timer-display">20:00</span></div>
+        <aside class="notes">
+          Armar los grupos tú (intentar mezclar científicas con tecnólogas). 4-5 por grupo = 6-7 grupos. Circular entre grupos. A los 15 min: "Cierren la ronda, asegúrense de que todas compartieron."
+        </aside>
+      </section>
+
+      <!-- ============================================ -->
+      <!-- LÁMINA 20: PITCH RELÁMPAGO -->
+      <!-- ============================================ -->
+      <section>
+        <h2>Pitch relámpago</h2>
+        <p class="big">¿Quién quiere compartir<br>con todo el grupo?</p>
+        <p style="margin-top:0.8em;">1 minuto por persona. Voluntario.</p>
+        <p class="accent" style="font-size:1.1em; margin-top:1em; font-weight:600;">Aplausos, no evaluación.<br>Esto no es un concurso.</p>
+        <aside class="notes">
+          Pedir voluntarias. Idealmente 5-8 pitches (máximo 10 min). Agradecer cada pitch. Si hay pocas voluntarias, pedir a cada grupo que nomine a una. Tono ligero y celebratorio.
+        </aside>
+      </section>
+
+      <!-- ============================================ -->
+      <!-- LÁMINA 21: DE LA ESPECULACIÓN A LA ACCIÓN -->
+      <!-- ============================================ -->
+      <section>
+        <h2>De la especulación<br>a la acción</h2>
+        <p class="dim" style="font-size:0.9em;">En tu hoja de aterrizaje, responde:</p>
+        <ol>
+          <li>¿Cuál de mis conceptos <strong>quiero explorar más</strong>?</li>
+          <li>¿Qué es lo primero que tendría que <strong>prototipar</strong>?</li>
+          <li>¿Qué <strong>herramienta</strong> de las que vimos hoy podría usar?</li>
+          <li>¿Qué necesito <strong>averiguar o aprender</strong> antes?</li>
+        </ol>
+        <div class="timer" data-minutes="10" onclick="toggleTimer(this)"><span class="timer-icon">▶</span> <span class="timer-display">10:00</span></div>
+        <aside class="notes">
+          Repartir hoja de aterrizaje. "Esto es lo que van a traer al Taller 4: una idea y una primera acción para hacerla tangible."
+        </aside>
+      </section>
+
+      <!-- ============================================ -->
+      <!-- LÁMINA 22: REFLEXIÓN GRUPAL -->
+      <!-- ============================================ -->
+      <section>
+        <h2>¿Qué se llevan hoy?</h2>
+        <ul>
+          <li>¿Qué se les abrió que no habían considerado?</li>
+          <li>¿Alguna tecnología que antes parecía lejana y ahora ven aplicable?</li>
+          <li>¿Qué se llevan para el próximo taller?</li>
+        </ul>
+        <aside class="notes">
+          Preguntas abiertas al grupo. No forzar respuestas. 2-3 intervenciones por pregunta. Escuchar más que hablar. Este es SU momento de síntesis.
+        </aside>
+      </section>
+
+      <!-- ============================================ -->
+      <!-- LÁMINA 23: LO QUE VIENE -->
+      <!-- ============================================ -->
+      <section>
+        <h3 style="color:var(--gray);">Lo que viene</h3>
+        <h2>Taller 4:<br><span class="accent">Mini makerthon</span></h2>
+        <p style="margin-top:1em;">Van a prototipar. Construir. Experimentar.</p>
+        <p style="margin-top:0.5em;">Lleguen con su <strong>hoja de aterrizaje</strong> y ganas de hacer.</p>
+        <aside class="notes">
+          Transición al cierre. Tono de anticipación positiva.
+        </aside>
+      </section>
+
+      <!-- ============================================ -->
+      <!-- LÁMINA 24: RECURSOS -->
+      <!-- ============================================ -->
+      <section>
+        <h2>Herramientas para explorar</h2>
+        <div class="resources">
+          <div class="resource-group">
+            <h3>IA generativa</h3>
+            <p>
+              <a href="https://chat.openai.com">ChatGPT</a> — chat.openai.com<br>
+              <a href="https://claude.ai">Claude</a> — claude.ai<br>
+              <a href="https://gemini.google.com">Gemini</a> — gemini.google.com
+            </p>
+          </div>
+          <div class="resource-group">
+            <h3>Prototipar apps</h3>
+            <p>
+              <a href="https://v0.dev">v0.dev</a> — Vercel<br>
+              <a href="https://lovable.dev">Lovable</a> — lovable.dev
+            </p>
+          </div>
+          <div class="resource-group">
+            <h3>Automatización</h3>
+            <p>
+              <a href="https://make.com">Make</a> — make.com<br>
+              <a href="https://zapier.com">Zapier</a> — zapier.com
+            </p>
+          </div>
+          <div class="resource-group">
+            <h3>Datos y análisis</h3>
+            <p>
+              <a href="https://colab.research.google.com">Google Colab</a> — notebooks gratis<br>
+              Subir CSV a Claude o ChatGPT
+            </p>
+          </div>
+        </div>
+        <aside class="notes">
+          No leerla entera — decir "les voy a mandar esta lista después". Dejarla proyectada mientras se despiden. Compartir por email o WhatsApp del grupo.
+        </aside>
+      </section>
+
+      <!-- ============================================ -->
+      <!-- LÁMINA 25: CIERRE -->
+      <!-- ============================================ -->
+      <section class="portada">
+        <h1>Gracias</h1>
+        <h3>Mujeres STEM Los Ríos — Taller 3</h3>
+        <p style="font-size:1.5em; margin-top:1em;">📸</p>
+        <p class="dim" style="font-size:0.9em;">Foto grupal</p>
+        <aside class="notes">
+          Foto. Agradecer. Recordar que guarden sus canvas y hojas de aterrizaje para el Taller 4.
+        </aside>
+      </section>
+
+    </div>
+  </div>
+
+  <script src="https://cdn.jsdelivr.net/npm/reveal.js@5.1.0/dist/reveal.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/reveal.js@5.1.0/plugin/notes/notes.js"></script>
+  <script>
+    // Timer interactivo
+    const timers = new Map();
+
+    function toggleTimer(el) {
+      if (timers.has(el)) {
+        // Ya corriendo o terminado → reset
+        clearInterval(timers.get(el));
+        timers.delete(el);
+        const mins = parseInt(el.dataset.minutes);
+        el.querySelector('.timer-display').textContent = pad(mins) + ':00';
+        el.querySelector('.timer-icon').textContent = '▶';
+        el.classList.remove('running', 'done');
+      } else {
+        // Iniciar
+        const mins = parseInt(el.dataset.minutes);
+        let remaining = mins * 60;
+        el.classList.add('running');
+        el.classList.remove('done');
+        el.querySelector('.timer-icon').textContent = '⏸';
+        updateDisplay(el, remaining);
+
+        const interval = setInterval(() => {
+          remaining--;
+          updateDisplay(el, remaining);
+          if (remaining <= 0) {
+            clearInterval(interval);
+            timers.delete(el);
+            el.classList.remove('running');
+            el.classList.add('done');
+            el.querySelector('.timer-icon').textContent = '↺';
+            el.querySelector('.timer-display').textContent = '¡Tiempo!';
+          }
+        }, 1000);
+
+        timers.set(el, interval);
+      }
+    }
+
+    function updateDisplay(el, seconds) {
+      const m = Math.floor(seconds / 60);
+      const s = seconds % 60;
+      el.querySelector('.timer-display').textContent = pad(m) + ':' + pad(s);
+    }
+
+    function pad(n) {
+      return n.toString().padStart(2, '0');
+    }
+
+    Reveal.initialize({
+      hash: true,
+      slideNumber: true,
+      controls: true,
+      progress: true,
+      center: true,
+      transition: 'fade',
+      transitionSpeed: 'fast',
+      plugins: [ RevealNotes ],
+      width: 1920,
+      height: 1080,
+      margin: 0.04,
+      minScale: 0.2,
+      maxScale: 2.0,
+    });
+  </script>
+</body>
+</html>
