@@ -226,11 +226,19 @@ Explica los hallazgos como si fuera para una comunidad rural que quiere entender
         <span class="demo-tool">lovable.dev</span>
       </div>
       <div class="demo-content">
-        <div class="prompt">Crea una aplicación web para monitoreo comunitario de calidad del agua. Incluye:
-- Un dashboard con 5 estaciones de monitoreo en un mapa
-- Cada estación muestra: pH, turbidez, temperatura
-- Indicadores de color: verde (normal), amarillo (precaución), rojo (alerta)
-- Un historial de las últimas 10 mediciones por estación
+        <div class="prompt">Crea una aplicación web para mostrar el estado de calidad del agua en la Región de Los Ríos, Chile.
+
+Datos del análisis:
+- 5 estaciones de monitoreo: San Pedro, Río Calle-Calle, Río Valdivia, Cruces Norte, Cruces Sur
+- Cruces Sur está en ALERTA: coliformes fecales 428 NMP promedio, turbidez 21.5 NTU, pH ácido 6.6
+- San Pedro tiene calidad EXCELENTE: coliformes 83, turbidez 7.1 NTU
+- La calidad empeora en verano (dic-feb) y mejora en invierno (jun-ago)
+
+Incluye:
+- Dashboard con las 5 estaciones y su estado actual (verde/amarillo/rojo)
+- Indicador destacado para Cruces Sur mostrando la alerta activa
+- Gráfico simple mostrando el patrón estacional de coliformes
+- Sección con recomendación para la comunidad de Cruces Sur
 - Diseño mobile-first, en español</div>
         <button class="copy-btn" onclick="copyPrompt(this)">Copiar prompt</button>
       </div>
