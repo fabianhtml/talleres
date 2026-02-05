@@ -251,13 +251,16 @@ Incluye:
         <span class="demo-tool">n8n.io</span>
       </div>
       <div class="demo-content">
-        <div class="prompt">Flujo a armar en n8n:
+        <div class="prompt">Flujo en n8n:
 
-1. Google Form → recibe reporte comunitario de calidad del agua
-2. Google Sheets → registra automáticamente la información
-3. Gmail → envía email de alerta al equipo responsable</div>
-        <button class="copy-btn" onclick="copyPrompt(this)">Copiar prompt</button>
-        <p class="note">Este es un flujo visual, no un prompt de texto</p>
+Webhook → IF (coliformes > 500) → Gmail + Respuesta
+
+Probar con curl:
+curl -X POST "URL_DEL_WEBHOOK" \
+  -H "Content-Type: application/json" \
+  -d '{"estacion": "Cruces Sur", "coliformes": 850, "turbidez": 40.1, "fecha": "2026-02-05"}'</div>
+        <button class="copy-btn" onclick="copyPrompt(this)">Copiar curl</button>
+        <p class="note">Reemplaza URL_DEL_WEBHOOK con tu URL de n8n. El flujo envía email cuando coliformes > 500.</p>
       </div>
     </section>
 
