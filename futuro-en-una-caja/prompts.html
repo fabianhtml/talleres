@@ -228,17 +228,18 @@ Explica los hallazgos como si fuera para una comunidad rural que quiere entender
       <div class="demo-content">
         <div class="prompt">Crea una aplicación web para mostrar el estado de calidad del agua en la Región de Los Ríos, Chile.
 
-Datos del análisis:
-- 5 estaciones de monitoreo: San Pedro, Río Calle-Calle, Río Valdivia, Cruces Norte, Cruces Sur
-- Cruces Sur está en ALERTA: coliformes fecales 428 NMP promedio, turbidez 21.5 NTU, pH ácido 6.6
-- San Pedro tiene calidad EXCELENTE: coliformes 83, turbidez 7.1 NTU
-- La calidad empeora en verano (dic-feb) y mejora en invierno (jun-ago)
+Datos del análisis (380 mediciones, 3 años, 5 estaciones):
+- Cruces Sur está en ALERTA CRÍTICA: coliformes 661 NMP promedio (máx 900), turbidez 32.8 NTU, pH ácido 6.5
+- Cruces Norte en PRECAUCIÓN: coliformes 362 NMP, turbidez 19.2 NTU
+- San Pedro EXCELENTE: coliformes 58 NMP, turbidez 5 NTU (referencia de agua limpia)
+- Río Calle-Calle y Río Valdivia: buenos (~150 NMP)
+- Patrón estacional: la contaminación sube 2x en verano (dic-feb) vs invierno
 
 Incluye:
-- Dashboard con las 5 estaciones y su estado actual (verde/amarillo/rojo)
-- Indicador destacado para Cruces Sur mostrando la alerta activa
-- Gráfico simple mostrando el patrón estacional de coliformes
-- Sección con recomendación para la comunidad de Cruces Sur
+- Dashboard con las 5 estaciones y semáforo (verde/amarillo/rojo)
+- Alerta destacada para Cruces Sur con recomendación de hervir el agua
+- Gráfico de líneas mostrando coliformes por mes (patrón estacional)
+- Comparativa visual: Cruces Sur vs San Pedro
 - Diseño mobile-first, en español</div>
         <button class="copy-btn" onclick="copyPrompt(this)">Copiar prompt</button>
       </div>
