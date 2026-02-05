@@ -1,0 +1,66 @@
+fecha,estacion,rio,ph,turbidez_ntu,temperatura_c,oxigeno_disuelto_mg_l,coliformes_fecales_nmp,observaciones
+2025-01-15,Estación Río Calle-Calle,Calle-Calle,7.2,8.5,18.3,8.1,120,Normal
+2025-01-15,Estación Cruces Norte,Cruces,7.0,12.3,17.8,7.9,180,Leve turbidez
+2025-01-15,Estación Cruces Sur,Cruces,6.8,15.7,18.1,7.5,250,Turbidez elevada
+2025-01-15,Estación Río Valdivia,Valdivia,7.1,9.2,18.5,8.0,140,Normal
+2025-01-15,Estación San Pedro,San Pedro,7.3,7.1,17.2,8.4,90,Buena calidad
+2025-02-15,Estación Río Calle-Calle,Calle-Calle,7.1,10.2,20.1,7.8,150,Normal
+2025-02-15,Estación Cruces Norte,Cruces,6.9,18.5,19.5,7.2,320,Turbidez alta post-lluvia
+2025-02-15,Estación Cruces Sur,Cruces,6.5,25.3,19.8,6.8,480,Alerta coliformes
+2025-02-15,Estación Río Valdivia,Valdivia,7.0,11.8,20.3,7.7,170,Normal
+2025-02-15,Estación San Pedro,San Pedro,7.2,8.3,18.9,8.2,100,Buena calidad
+2025-03-15,Estación Río Calle-Calle,Calle-Calle,7.0,14.6,16.8,7.9,200,Leve aumento post-lluvia
+2025-03-15,Estación Cruces Norte,Cruces,6.7,22.1,16.2,7.0,410,Turbidez persistente
+2025-03-15,Estación Cruces Sur,Cruces,6.4,28.9,16.5,6.5,620,Alerta: coliformes y turbidez
+2025-03-15,Estación Río Valdivia,Valdivia,7.0,13.5,17.0,7.6,190,Normal
+2025-03-15,Estación San Pedro,San Pedro,7.1,9.0,15.8,8.1,110,Buena calidad
+2025-04-15,Estación Río Calle-Calle,Calle-Calle,7.1,11.3,13.5,8.2,130,Normal
+2025-04-15,Estación Cruces Norte,Cruces,6.8,16.8,13.0,7.4,290,Mejora leve
+2025-04-15,Estación Cruces Sur,Cruces,6.6,20.1,13.2,6.9,380,Sigue elevado
+2025-04-15,Estación Río Valdivia,Valdivia,7.1,10.5,13.8,7.9,150,Normal
+2025-04-15,Estación San Pedro,San Pedro,7.3,7.8,12.5,8.5,85,Muy buena calidad
+2025-05-15,Estación Río Calle-Calle,Calle-Calle,7.2,9.8,10.2,8.5,110,Buena calidad invernal
+2025-05-15,Estación Cruces Norte,Cruces,6.9,14.2,9.8,7.6,220,Mejora estacional
+2025-05-15,Estación Cruces Sur,Cruces,6.7,17.5,10.0,7.1,310,Mejora pero aún elevado
+2025-05-15,Estación Río Valdivia,Valdivia,7.1,9.0,10.5,8.1,130,Normal
+2025-05-15,Estación San Pedro,San Pedro,7.4,6.5,9.2,8.7,70,Excelente calidad
+2025-06-15,Estación Río Calle-Calle,Calle-Calle,7.3,8.1,8.0,8.8,90,Buena calidad invernal
+2025-06-15,Estación Cruces Norte,Cruces,7.0,11.5,7.5,7.9,170,Normal invernal
+2025-06-15,Estación Cruces Sur,Cruces,6.8,14.2,7.8,7.3,240,Mejora significativa
+2025-06-15,Estación Río Valdivia,Valdivia,7.2,8.5,8.2,8.3,120,Normal
+2025-06-15,Estación San Pedro,San Pedro,7.4,5.8,7.0,8.9,60,Excelente
+2025-07-15,Estación Río Calle-Calle,Calle-Calle,7.3,7.5,7.2,8.9,80,Excelente
+2025-07-15,Estación Cruces Norte,Cruces,7.1,10.8,6.8,8.0,150,Normal
+2025-07-15,Estación Cruces Sur,Cruces,6.9,12.5,7.0,7.5,200,Aceptable
+2025-07-15,Estación Río Valdivia,Valdivia,7.2,7.8,7.5,8.4,110,Normal
+2025-07-15,Estación San Pedro,San Pedro,7.5,5.2,6.5,9.0,55,Excelente
+2025-08-15,Estación Río Calle-Calle,Calle-Calle,7.2,8.8,8.5,8.7,95,Buena calidad
+2025-08-15,Estación Cruces Norte,Cruces,7.0,12.0,8.0,7.8,180,Normal
+2025-08-15,Estación Cruces Sur,Cruces,6.8,15.3,8.2,7.2,260,Leve aumento
+2025-08-15,Estación Río Valdivia,Valdivia,7.1,9.5,8.8,8.2,125,Normal
+2025-08-15,Estación San Pedro,San Pedro,7.4,6.0,7.8,8.8,65,Excelente
+2025-09-15,Estación Río Calle-Calle,Calle-Calle,7.1,10.5,11.0,8.3,130,Normal primaveral
+2025-09-15,Estación Cruces Norte,Cruces,6.8,15.8,10.5,7.5,260,Aumento post-deshielo
+2025-09-15,Estación Cruces Sur,Cruces,6.5,21.2,10.8,6.8,420,Alerta: deshielo + escorrentía
+2025-09-15,Estación Río Valdivia,Valdivia,7.0,11.2,11.3,7.8,160,Normal
+2025-09-15,Estación San Pedro,San Pedro,7.3,7.5,10.0,8.5,90,Buena calidad
+2025-10-15,Estación Río Calle-Calle,Calle-Calle,7.1,12.0,13.5,8.0,160,Normal
+2025-10-15,Estación Cruces Norte,Cruces,6.7,19.5,13.0,7.2,350,Turbidez alta
+2025-10-15,Estación Cruces Sur,Cruces,6.4,26.8,13.3,6.5,550,Alerta sostenida
+2025-10-15,Estación Río Valdivia,Valdivia,7.0,12.8,13.8,7.7,180,Normal
+2025-10-15,Estación San Pedro,San Pedro,7.2,8.0,12.2,8.3,100,Buena calidad
+2025-11-15,Estación Río Calle-Calle,Calle-Calle,7.0,13.5,16.0,7.8,190,Aumento estacional
+2025-11-15,Estación Cruces Norte,Cruces,6.6,21.8,15.5,7.0,400,Turbidez persistente
+2025-11-15,Estación Cruces Sur,Cruces,6.3,30.2,15.8,6.3,680,Alerta máxima del año
+2025-11-15,Estación Río Valdivia,Valdivia,7.0,14.0,16.2,7.5,200,Leve aumento
+2025-11-15,Estación San Pedro,San Pedro,7.2,8.8,14.8,8.2,105,Buena calidad
+2025-12-15,Estación Río Calle-Calle,Calle-Calle,7.1,11.0,19.0,7.9,165,Normal verano
+2025-12-15,Estación Cruces Norte,Cruces,6.8,17.2,18.5,7.3,300,Mejora leve vs noviembre
+2025-12-15,Estación Cruces Sur,Cruces,6.5,24.5,18.8,6.6,520,Sigue en alerta
+2025-12-15,Estación Río Valdivia,Valdivia,7.0,12.0,19.2,7.6,175,Normal
+2025-12-15,Estación San Pedro,San Pedro,7.3,7.5,17.5,8.3,95,Buena calidad
+2026-01-15,Estación Río Calle-Calle,Calle-Calle,7.0,12.8,21.0,7.6,185,Normal verano
+2026-01-15,Estación Cruces Norte,Cruces,6.7,20.5,20.5,7.1,380,Empeora con calor
+2026-01-15,Estación Cruces Sur,Cruces,6.3,29.1,20.8,6.2,650,Alerta: calor + bajo caudal
+2026-01-15,Estación Río Valdivia,Valdivia,6.9,14.5,21.2,7.4,210,Leve deterioro verano
+2026-01-15,Estación San Pedro,San Pedro,7.2,8.2,19.0,8.1,105,Buena calidad

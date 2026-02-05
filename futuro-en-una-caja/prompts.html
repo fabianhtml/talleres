@@ -1,0 +1,276 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Prompts — Futuro en una Caja</title>
+  <style>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: 'SF Mono', 'Monaco', 'Inconsolata', 'Roboto Mono', 'Consolas', monospace;
+      background: #000;
+      color: #fff;
+      line-height: 1.6;
+      padding: 2rem;
+      max-width: 800px;
+      margin: 0 auto;
+    }
+
+    header {
+      border-bottom: 1px solid #333;
+      padding-bottom: 1.5rem;
+      margin-bottom: 2rem;
+    }
+
+    h1 {
+      font-size: 1.5rem;
+      font-weight: 400;
+      letter-spacing: -0.02em;
+    }
+
+    h1 span {
+      color: #666;
+    }
+
+    .subtitle {
+      color: #666;
+      font-size: 0.875rem;
+      margin-top: 0.5rem;
+    }
+
+    .demo {
+      margin-bottom: 2.5rem;
+      border: 1px solid #333;
+      border-radius: 4px;
+      overflow: hidden;
+    }
+
+    .demo-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 0.75rem 1rem;
+      background: #111;
+      border-bottom: 1px solid #333;
+    }
+
+    .demo-title {
+      font-size: 0.875rem;
+      font-weight: 600;
+    }
+
+    .demo-number {
+      color: #666;
+      font-weight: 400;
+    }
+
+    .demo-tool {
+      font-size: 0.75rem;
+      color: #888;
+      background: #222;
+      padding: 0.25rem 0.5rem;
+      border-radius: 3px;
+    }
+
+    .demo-content {
+      padding: 1rem;
+      background: #0a0a0a;
+    }
+
+    .prompt {
+      font-size: 0.875rem;
+      white-space: pre-wrap;
+      color: #ccc;
+      line-height: 1.7;
+    }
+
+    .copy-btn {
+      display: block;
+      width: 100%;
+      margin-top: 1rem;
+      padding: 0.75rem;
+      background: #fff;
+      color: #000;
+      border: none;
+      border-radius: 3px;
+      font-family: inherit;
+      font-size: 0.875rem;
+      font-weight: 600;
+      cursor: pointer;
+      transition: background 0.15s, transform 0.1s;
+    }
+
+    .copy-btn:hover {
+      background: #e0e0e0;
+    }
+
+    .copy-btn:active {
+      transform: scale(0.98);
+    }
+
+    .copy-btn.copied {
+      background: #22c55e;
+      color: #fff;
+    }
+
+    .download-btn {
+      display: block;
+      width: 100%;
+      margin-top: 0.5rem;
+      padding: 0.75rem;
+      background: transparent;
+      color: #fff;
+      border: 1px solid #444;
+      border-radius: 3px;
+      font-family: inherit;
+      font-size: 0.875rem;
+      font-weight: 600;
+      cursor: pointer;
+      transition: background 0.15s, border-color 0.15s;
+      text-align: center;
+      text-decoration: none;
+    }
+
+    .download-btn:hover {
+      background: #222;
+      border-color: #666;
+    }
+
+    .note {
+      font-size: 0.75rem;
+      color: #666;
+      margin-top: 0.75rem;
+      padding-left: 1rem;
+      border-left: 2px solid #333;
+    }
+
+    footer {
+      margin-top: 3rem;
+      padding-top: 1.5rem;
+      border-top: 1px solid #333;
+      font-size: 0.75rem;
+      color: #666;
+    }
+
+    footer a {
+      color: #888;
+    }
+
+    @media (max-width: 600px) {
+      body {
+        padding: 1rem;
+      }
+
+      h1 {
+        font-size: 1.25rem;
+      }
+
+      .demo-header {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 0.5rem;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <h1>Prompts <span>/ Futuro en una Caja</span></h1>
+    <p class="subtitle">Taller 3 — Mujeres STEM Los Ríos</p>
+  </header>
+
+  <main>
+
+    <section class="demo">
+      <div class="demo-header">
+        <span class="demo-title"><span class="demo-number">01</span> IA generativa</span>
+        <span class="demo-tool">claude.ai / chatgpt.com</span>
+      </div>
+      <div class="demo-content">
+        <div class="prompt">Soy una emprendedora en la región de Los Ríos, Chile. Mi problema es que las comunidades rurales cercanas a ríos no tienen forma accesible de monitorear la calidad del agua que consumen. Los análisis de laboratorio son caros y demoran semanas.
+
+Dame 10 ideas de productos o servicios tecnológicos que podrían resolver este problema. Incluye opciones de baja, media y alta complejidad técnica. Para cada idea, explica en una oración qué hace y qué tecnología usa.</div>
+        <button class="copy-btn" onclick="copyPrompt(this)">Copiar prompt</button>
+      </div>
+    </section>
+
+    <section class="demo">
+      <div class="demo-header">
+        <span class="demo-title"><span class="demo-number">02</span> IA analítica</span>
+        <span class="demo-tool">claude.ai + CSV</span>
+      </div>
+      <div class="demo-content">
+        <div class="prompt">Este CSV tiene datos de monitoreo de calidad del agua en 5 estaciones de ríos de la Región de Los Ríos, Chile. Analiza los datos y dime:
+
+1. ¿Hay alguna estación con valores preocupantes?
+2. ¿Se ven patrones estacionales?
+3. ¿Qué anomalías detectas?
+4. Genera una tabla resumen por estación.
+
+Explica los hallazgos como si fuera para una comunidad rural que quiere entender si su agua es segura.</div>
+        <button class="copy-btn" onclick="copyPrompt(this)">Copiar prompt</button>
+        <a href="demo-calidad-agua.csv" download class="download-btn">Descargar CSV</a>
+        <p class="note">Adjunta el archivo CSV antes de enviar este prompt</p>
+      </div>
+    </section>
+
+    <section class="demo">
+      <div class="demo-header">
+        <span class="demo-title"><span class="demo-number">03</span> App / Plataforma web</span>
+        <span class="demo-tool">lovable.dev</span>
+      </div>
+      <div class="demo-content">
+        <div class="prompt">Crea una aplicación web para monitoreo comunitario de calidad del agua. Incluye:
+- Un dashboard con 5 estaciones de monitoreo en un mapa
+- Cada estación muestra: pH, turbidez, temperatura
+- Indicadores de color: verde (normal), amarillo (precaución), rojo (alerta)
+- Un historial de las últimas 10 mediciones por estación
+- Diseño mobile-first, en español</div>
+        <button class="copy-btn" onclick="copyPrompt(this)">Copiar prompt</button>
+      </div>
+    </section>
+
+    <section class="demo">
+      <div class="demo-header">
+        <span class="demo-title"><span class="demo-number">04</span> Automatización</span>
+        <span class="demo-tool">make.com</span>
+      </div>
+      <div class="demo-content">
+        <div class="prompt">Flujo a armar en Make.com:
+
+1. Google Form → recibe reporte comunitario de calidad del agua
+2. Google Sheets → registra automáticamente la información
+3. Gmail → envía email de alerta al equipo responsable</div>
+        <button class="copy-btn" onclick="copyPrompt(this)">Copiar prompt</button>
+        <p class="note">Este es un flujo visual, no un prompt de texto</p>
+      </div>
+    </section>
+
+  </main>
+
+  <footer>
+    <p>Taller 3 — 5 febrero 2026 — <a href="index.html">Ver presentación</a></p>
+  </footer>
+
+  <script>
+    function copyPrompt(btn) {
+      const prompt = btn.previousElementSibling.textContent;
+      navigator.clipboard.writeText(prompt).then(() => {
+        btn.textContent = 'Copiado';
+        btn.classList.add('copied');
+        setTimeout(() => {
+          btn.textContent = 'Copiar prompt';
+          btn.classList.remove('copied');
+        }, 2000);
+      });
+    }
+  </script>
+
+</body>
+</html>
